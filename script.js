@@ -3,26 +3,26 @@ let participantes = [
     {
         nome: "Victor Batista",
         email: "victor@gmail.com",
-        dataInscricao: new Date(2024, 3, 22, 19, 20),
-        dataCheckIn: new Date(2024, 3, 25, 22, 01),
+        dataInscricao: new Date(2024, 1, 22, 19, 20),
+        dataCheckIn: new Date(2024, 1, 25, 22, 20),
     },
     {
         nome: "Maria Silva",
         email: "maria@gmail.com",
-        dataInscricao: new Date(2024, 3, 20, 14, 30),
-        dataCheckIn: new Date(2024, 3, 24, 10, 45),
+        dataInscricao: new Date(2024, 1, 20, 14, 30),
+        dataCheckIn: new Date(2024, 2, 24, 10, 45),
     },
     {
         nome: "João Oliveira",
         email: "joao@gmail.com",
-        dataInscricao: new Date(2024, 3, 18, 9, 10),
-        dataCheckIn: new Date(2024, 3, 23, 15, 20),
+        dataInscricao: new Date(2024, 1, 18, 9, 10),
+        dataCheckIn: new Date(2024, 1, 23, 15, 20),
     },
     {
         nome: "Ana Santos",
         email: "ana@gmail.com",
-        dataInscricao: new Date(2024, 3, 15, 16, 45),
-        dataCheckIn: new Date(2024, 3, 21, 8, 0),
+        dataInscricao: new Date(2024, 2, 15, 16, 45),
+        dataCheckIn: new Date(2024, 4, 21, 8, 0),
     },
     {
         nome: "Pedro Almeida",
@@ -51,8 +51,8 @@ let participantes = [
     {
         nome: "Luís Santos",
         email: "luis@gmail.com",
-        dataInscricao: new Date(2024, 2, 28, 10, 0),
-        dataCheckIn: new Date(2024, 3, 3, 16, 50),
+        dataInscricao: new Date(2024, 3, 28, 10, 0),
+        dataCheckIn: new Date(2024, 5, 3, 16, 50),
     },
     {
         nome: "Sofia Rodrigues",
@@ -63,6 +63,9 @@ let participantes = [
 ];
 
 const criarNovoParticipante = (participante) =>{
+    const dataInscricao = dayjs(Date.now()).to(participante.dataInscricao)
+    const dataCheckIn = dayjs(Date.now()).to(participante.dataCheckIn)
+
     return `
         <tr>
             <td>
@@ -76,11 +79,11 @@ const criarNovoParticipante = (participante) =>{
             </td>
                 
             <td>
-                ${participante.dataInscricao}
+                ${dataInscricao}
             </td>
 
             <td>
-            ${participante.dataCheckIn}
+            ${dataCheckIn}
             </td>
         </tr>
     `
